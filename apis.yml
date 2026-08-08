@@ -1,17 +1,31 @@
 aid: axial
 name: Axial Networks
-description: 'Axial Networks is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: 'Axial Networks operates Axial (axial.net), a private deal network for
+  mergers, acquisitions and capital raising in the North American lower middle market.
+  Founded in 2010 and based in New York, the platform connects business owners, M&A
+  advisors, private equity buyers, strategic acquirers and lenders around live sell-side
+  and buy-side transactions, and publishes a public member directory, the Middle Market
+  Review editorial forum, industry deal-activity dashboards and business valuation
+  calculators. The member product runs at network.axial.net and product help documentation
+  at guide.axial.net. Axial publishes an llms.txt orientation file for language models
+  and a public status page, but ships no public API, SDK, webhook surface or developer
+  program — the platform is delivered as an authenticated end-user application only.'
+image: https://www.axial.net/wp-content/uploads/2024/12/cropped-00_Axial-favicon-120x120.png
 url: https://raw.githubusercontent.com/api-evangelist/axial/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-06'
 modified: '2026-08-06'
 tags:
 - Company
+- Mergers and Acquisitions
+- Private Capital
+- Deal Sourcing
+- Financial Services
+- Middle Market
+- Investment Banking
+- Marketplace
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +33,56 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/axial-domain-security.yml
 - type: Website
-  url: https://forgeglobal.com/axial_stock/
+  url: https://www.axial.net/
+- type: HelpCenter
+  url: https://guide.axial.net/
+- type: Blog
+  url: https://www.axial.net/forum/
+- type: Login
+  url: https://network.axial.net/sign-in
+- type: StatusPage
+  url: https://status.axial.net/
+- type: TermsOfService
+  url: https://www.axial.net/legal/terms/
+- type: PrivacyPolicy
+  url: https://www.axial.net/legal/privacy/
+- type: GitHubOrganization
+  url: https://github.com/axialmarket
+- type: LinkedIn
+  url: https://www.linkedin.com/company/axial
+- type: Twitter
+  url: https://twitter.com/AxialCo
+- type: LLMsTxt
+  url: llms/axial-llms.txt
+- type: Lifecycle
+  url: lifecycle/axial-lifecycle.yml
+x-enrichment:
+  date: '2026-08-06'
+  status: minimal
+  artifacts_added: 3
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: no-developer-program
+  detail: >-
+    Axial ships its lower-middle-market deal network only as an authenticated
+    end-user application at network.axial.net — api.axial.net resolves in DNS but
+    404s on every spec path, the app host answers a 15,072-byte SPA shell for any
+    route (so its 200s are a catch-all, not endpoints), and neither the marketing
+    site, the guide.axial.net help center, the published llms.txt nor the Terms of
+    Service mentions an API, SDK or webhook anywhere.
+  evidence:
+  - url: https://api.axial.net/openapi.json
+    status: 404
+  - url: https://www.axial.net/developers
+    status: 404
+  - url: https://network.axial.net/graphql
+    status: 405
+  - url: https://www.axial.net/.well-known/security.txt
+    status: 404
+  - url: https://www.axial.net/llms.txt
+    status: 200
+  checked: '2026-08-06'
