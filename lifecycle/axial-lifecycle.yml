@@ -1,0 +1,53 @@
+generated: '2026-08-06'
+method: searched
+source: >-
+  https://status.axial.net/ (HTTP 200, title "Axial Prod"),
+  https://www.axial.net/llms.txt (HTTP 200),
+  https://www.axial.net/legal/terms/ (HTTP 200),
+  https://guide.axial.net/ (HTTP 302 -> Cloudflare-fronted help center)
+scope: >-
+  Axial publishes no public API, so there is no API versioning, deprecation or
+  sunset policy to record. What exists is platform-level operational lifecycle:
+  a public status page for the member application and a product help center.
+  Recorded here so the absence is evidenced rather than assumed.
+versioning:
+  scheme: none-published
+  mechanism: null
+  docs: null
+  notes: >-
+    No public API surface. Probed www.axial.net, api.axial.net,
+    network.axial.net and guide.axial.net for OpenAPI/Swagger/GraphQL — all
+    missed (see x-coverage in apis.yml). No API version header, path prefix or
+    version policy is documented anywhere on the public site or in llms.txt.
+deprecation:
+  policy_url: null
+  changelog: null
+  sunset_header: false
+  notes: >-
+    No published deprecation policy, no RFC 8594 Sunset/Deprecation headers, and
+    no dated product changelog on the public surface. Product changes are
+    communicated through the Axial Forum (Middle Market Review) and the
+    guide.axial.net help center rather than a versioned changelog.
+sla:
+  url: https://www.axial.net/legal/terms/
+  public_uptime_target: null
+  notes: >-
+    No numeric uptime commitment is published. Availability terms, if any, live
+    in the platform Terms of Service.
+status_page:
+  url: https://status.axial.net/
+  http_status: 200
+  title: Axial Prod
+  vendor: self-hosted (Laravel/Caddy; psp_session cookie, no Statuspage/Instatus signature)
+  components_published: false
+  incident_history: true
+  subscribe: email
+  notes: >-
+    Real, first-party, publicly reachable status page linked from the axial.net
+    homepage footer. Reports an overall up/down/paused roll-up and a 7-day update
+    feed with email subscription; it does not break the platform into named
+    components and exposes no JSON summary endpoint (/api/v2/status.json,
+    /api/v2/summary.json and /summary.json all 404).
+rate_limits: null
+deprecated_products: []
+deprecated_operations: []

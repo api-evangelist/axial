@@ -1,0 +1,17 @@
+generated: '2026-08-06'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.axial.net
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 24 14:39:14 2026 GMT
+  hsts: true
+  hsts_max_age: 604800
+domains:
+- domain: axial.net
+  dnssec: false
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: reject
