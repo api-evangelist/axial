@@ -10,6 +10,17 @@ description: 'Axial Networks operates Axial (axial.net), a private deal network 
   at guide.axial.net. Axial publishes an llms.txt orientation file for language models
   and a public status page, but ships no public API, SDK, webhook surface or developer
   program — the platform is delivered as an authenticated end-user application only.'
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 image: https://www.axial.net/wp-content/uploads/2024/12/cropped-00_Axial-favicon-120x120.png
 url: https://raw.githubusercontent.com/api-evangelist/axial/refs/heads/main/apis.yml
 x-type: company
